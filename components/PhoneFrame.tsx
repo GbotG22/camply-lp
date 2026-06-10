@@ -52,11 +52,13 @@ export function ScreenshotCard({
   src,
   alt,
   label,
+  title,
   desc,
 }: {
   src: string;
   alt: string;
   label: string;
+  title: string;
   desc: string;
 }) {
   return (
@@ -65,8 +67,8 @@ export function ScreenshotCard({
         <Image
           src={src}
           alt={alt}
-          width={300}
-          height={633}
+          width={390}
+          height={844}
           className="w-full h-full object-cover object-top"
           onError={(e) => {
             const el = e.target as HTMLImageElement;
@@ -74,13 +76,13 @@ export function ScreenshotCard({
             const parent = el.parentElement;
             if (parent) {
               parent.style.background = "linear-gradient(160deg,#e0e7ff 0%,#f0f9ff 100%)";
-              parent.innerHTML = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;padding:20px;text-align:center"><div style="font-size:40px">📱</div><div style="font-size:13px;font-weight:600;color:#4F8EF7">${label}</div><div style="font-size:11px;color:#94a3b8;line-height:1.4">${desc}</div></div>`;
+              parent.innerHTML = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;padding:20px;text-align:center"><div style="font-size:40px">📱</div><div style="font-size:13px;font-weight:600;color:#4F8EF7">${title}</div><div style="font-size:11px;color:#94a3b8;line-height:1.4">${desc}</div></div>`;
             }
           }}
         />
       </div>
       <div className="text-center">
-        <p className="font-semibold text-gray-800 text-sm">{label}</p>
+        <p className="font-semibold text-gray-900 text-sm">{title}</p>
         <p className="text-gray-500 text-xs mt-0.5 leading-relaxed">{desc}</p>
       </div>
     </div>
