@@ -27,6 +27,7 @@ export function PhoneFrame({
           alt={alt}
           width={w}
           height={h}
+          loading="eager"
           className="w-full h-full object-cover object-top"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
@@ -63,6 +64,7 @@ export function ScreenshotCard({
           alt={alt}
           width={390}
           height={844}
+          loading="eager"
           className="aspect-[9/19] h-full w-full object-cover object-top"
           onError={(e) => {
             const el = e.target as HTMLImageElement;
