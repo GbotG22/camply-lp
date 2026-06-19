@@ -1,76 +1,153 @@
 const features = [
   {
-    icon:  "🗓",
-    color: "bg-blue-50 text-blue-500",
-    title: "授業管理",
-    desc:  "時間割を登録してカレンダーに表示。休講や補講もすぐ更新できます。",
+    icon: "🗓",
+    color: "bg-[#F2F4FF]",
+    title: "授業・時間割管理",
+    desc: "時間割を登録してカレンダーに表示。休講や補講もすぐ更新できます。",
   },
   {
-    icon:  "📝",
-    color: "bg-orange-50 text-orange-500",
+    icon: "📝",
+    color: "bg-[#F2F4FF]",
     title: "課題・テスト管理",
-    desc:  "締切日を登録すれば3日前・前日・当日に自動通知。提出漏れをゼロに。",
+    desc: "締切日を登録すれば3日前・前日・当日に自動通知。提出漏れをゼロに。",
   },
   {
-    icon:  "💼",
-    color: "bg-purple-50 text-purple-500",
+    icon: "💼",
+    color: "bg-[#F2F4FF]",
     title: "バイト管理",
-    desc:  "シフトを登録して給与を自動計算。開始前に通知でリマインドします。",
+    desc: "シフトを登録して給与を自動計算。開始前に通知でリマインドします。",
   },
   {
-    icon:  "💰",
-    color: "bg-green-50 text-green-600",
+    icon: "💰",
+    color: "bg-[#F2F4FF]",
     title: "給料管理",
-    desc:  "勤務時間から給与を自動集計。給料日の通知で振込を見逃しません。",
+    desc: "勤務時間から給与を自動集計。給料日の通知で振込を見逃しません。",
   },
   {
-    icon:  "📊",
-    color: "bg-teal-50 text-teal-600",
+    icon: "📊",
+    color: "bg-[#F2F4FF]",
     title: "支出管理",
-    desc:  "収入・支出をカテゴリ別に記録。月ごとのグラフで使いすぎを防げます。",
+    desc: "収入・支出をカテゴリ別に記録。月ごとのグラフで使いすぎを防げます。",
   },
   {
-    icon:  "💳",
-    color: "bg-pink-50 text-pink-500",
+    icon: "💳",
+    color: "bg-[#F2F4FF]",
     title: "サブスク管理",
-    desc:  "Netflix・Spotify など月額サービスを一覧管理。更新前に通知でうっかり請求を防止。",
-  },
-  {
-    icon:  "🔔",
-    color: "bg-yellow-50 text-yellow-600",
-    title: "通知機能",
-    desc:  "シフト・課題・給料日・サブスク通知を自由にカスタマイズ。15分前〜当日まで細かく設定できます。",
+    desc: "Netflix・Spotifyなど月額サービスを一覧管理。更新前に通知します。",
   },
 ];
 
 export default function Features() {
   return (
-    <section className="py-24 bg-white" id="features">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-[#4F8EF7] text-sm font-semibold uppercase tracking-widest">Features</span>
-          <h2 className="mt-3 text-4xl font-bold text-gray-900 tracking-tight">
-            大学生活に必要なことを<br className="hidden sm:block" />すべてカバー
-          </h2>
-          <p className="mt-4 text-gray-500 text-lg max-w-xl mx-auto">
-            「これ、どこで管理してたっけ？」がなくなります。
-          </p>
-        </div>
+    <>
+      <section className="bg-white py-24" id="features">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto mb-28 max-w-3xl text-center">
+            <p className="text-xs font-black uppercase tracking-[0.34em] text-[#5861D9]">Why Camply</p>
+            <h2 className="mt-6 text-4xl font-black tracking-normal text-[#0F1833] sm:text-5xl">
+              大学生活を、ひとつのアプリで。
+            </h2>
+            <p className="mt-6 text-lg font-medium leading-8 text-[#7A8193]">
+              「これ、どこで管理してたっけ？」がなくなる。予定もお金も、camplyに集約します。
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {features.slice(0, 6).map((f) => (
-            <FeatureCard key={f.title} {...f} />
+          <FeatureStory
+            badge="予定管理"
+            title="授業もバイトも、ひとつのカレンダーに。"
+            body="時間割と毎週のシフトをまとめて登録。休講や補講もすぐに更新でき、今日やることがひと目で分かります。"
+            bullets={["時間割・授業をカレンダーに表示", "バイトのシフトを一括管理", "休講・補講もすぐ反映"]}
+            image="/screenshots/schedule.png"
+          />
+
+          <FeatureStory
+            reverse
+            badge="お金管理"
+            title="収入も支出も、毎月きちんと見える。"
+            body="勤務時間から給与を自動集計。収入・支出をカテゴリ別に記録し、月ごとのグラフで使いすぎを防ぎます。"
+            bullets={["シフトから給与を自動計算", "収支をカテゴリ別にグラフ化", "サブスクの更新前に通知"]}
+            image="/screenshots/money.png"
+          />
+
+          <FeatureStory
+            badge="通知機能"
+            title="大事な予定を、通知でうっかり防止。"
+            body="課題の締切、シフト開始、給料日、サブスクの更新日。必要なタイミングで自動リマインドします。"
+            bullets={["課題は3日前・前日・当日に通知", "シフト開始前にリマインド", "給料日・サブスク更新も通知"]}
+            image="/screenshots/notification-settings.png"
+          />
+        </div>
+      </section>
+
+      <section className="bg-[#F6F7FC] py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-14 text-center">
+            <p className="text-xs font-black uppercase tracking-[0.34em] text-[#5861D9]">Features</p>
+            <h2 className="mt-6 text-4xl font-black tracking-normal text-[#0F1833] sm:text-5xl">
+              大学生活に必要なこと、すべて。
+            </h2>
+            <p className="mt-5 text-lg font-medium text-[#7A8193]">
+              7つの機能で、大学生の毎日をまるごとサポートします。
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {features.map((f) => (
+              <FeatureCard key={f.title} {...f} />
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function FeatureStory({
+  badge,
+  title,
+  body,
+  bullets,
+  image,
+  reverse,
+}: {
+  badge: string;
+  title: string;
+  body: string;
+  bullets: string[];
+  image: string;
+  reverse?: boolean;
+}) {
+  return (
+    <div className={`grid items-center gap-14 py-12 lg:grid-cols-2 ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}>
+      <div>
+        <span className="inline-flex rounded-md bg-[#F2F4FF] px-3 py-2 text-sm font-black text-[#5861D9]">
+          {badge}
+        </span>
+        <h3 className="mt-7 text-3xl font-black leading-tight tracking-normal text-[#0F1833] sm:text-4xl">
+          {title}
+        </h3>
+        <p className="mt-6 max-w-xl text-lg font-medium leading-9 text-[#5F667A]">{body}</p>
+        <ul className="mt-8 space-y-3">
+          {bullets.map((bullet) => (
+            <li key={bullet} className="flex items-center gap-3 text-base font-black text-[#2D3448]">
+              <span className="grid h-6 w-6 place-items-center rounded-full bg-[#5861D9] text-sm text-white">✓</span>
+              {bullet}
+            </li>
           ))}
-        </div>
+        </ul>
+      </div>
 
-        {/* 7枚目（通知機能）は全幅で中央に */}
-        <div className="mt-5 flex justify-center">
-          <div className="w-full sm:w-1/2 lg:w-1/3">
-            <FeatureCard {...features[6]} />
+      <div className="flex justify-center">
+        <div className="relative">
+          <div className="absolute inset-x-8 bottom-4 h-24 rounded-full bg-[#D8DDF2] blur-2xl" />
+          <div className="relative overflow-hidden rounded-[2.1rem] border-[9px] border-[#0D1733] bg-white shadow-[0_24px_60px_rgba(15,24,51,0.18)]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={image} alt="" className="h-[520px] w-[248px] object-cover object-top" />
+            <div className="absolute left-1/2 top-2 h-6 w-24 -translate-x-1/2 rounded-full bg-black" />
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
@@ -86,12 +163,12 @@ function FeatureCard({
   desc: string;
 }) {
   return (
-    <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
-      <div className={`inline-flex w-12 h-12 items-center justify-center rounded-xl text-2xl mb-4 ${color}`}>
+    <div className="rounded-xl border border-[#E8ECF5] bg-white p-8 shadow-[0_14px_32px_rgba(15,24,51,0.04)]">
+      <div className={`mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl text-2xl ${color}`}>
         {icon}
       </div>
-      <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>
-      <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+      <h3 className="mb-3 text-xl font-black text-[#0F1833]">{title}</h3>
+      <p className="text-base font-medium leading-8 text-[#5F667A]">{desc}</p>
     </div>
   );
 }

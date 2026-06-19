@@ -27,16 +27,16 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="py-24 bg-[#F5F7FA]" id="faq">
-      <div className="max-w-3xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-[#4F8EF7] text-sm font-semibold uppercase tracking-widest">FAQ</span>
-          <h2 className="mt-3 text-4xl font-bold text-gray-900 tracking-tight">
+    <section className="bg-[#F6F7FC] py-24" id="faq">
+      <div className="mx-auto max-w-3xl px-6">
+        <div className="mb-14 text-center">
+          <span className="text-xs font-black uppercase tracking-[0.34em] text-[#5861D9]">FAQ</span>
+          <h2 className="mt-6 text-4xl font-black tracking-normal text-[#0F1833] sm:text-5xl">
             よくあるご質問
           </h2>
         </div>
 
-        <div className="space-y-3">
+        <div className="overflow-hidden rounded-xl border border-[#E8ECF5] bg-white shadow-[0_18px_44px_rgba(15,24,51,0.05)]">
           {faqs.map((faq) => (
             <FAQItem key={faq.q} q={faq.q} a={faq.a} />
           ))}
@@ -50,29 +50,27 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
+    <div className="border-b border-[#E8ECF5] last:border-b-0">
       <button
-        className="w-full flex items-center justify-between px-6 py-5 text-left"
+        className="flex w-full items-center justify-between px-7 py-6 text-left"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
       >
-        <span className="font-semibold text-gray-900 pr-4">Q. {q}</span>
+        <span className="pr-4 font-black text-[#0F1833]">{q}</span>
         <span
-          className={`flex-shrink-0 w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center transition-transform duration-200 ${
+          className={`grid h-7 w-7 flex-shrink-0 place-items-center rounded-full bg-[#F2F4FF] text-[#5861D9] transition-transform duration-200 ${
             open ? "rotate-180" : ""
           }`}
         >
-          <svg className="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
         </span>
       </button>
 
       {open && (
-        <div className="px-6 pb-5">
-          <div className="pt-0 border-t border-gray-100 pt-4">
-            <p className="text-gray-600 text-sm leading-relaxed">{a}</p>
-          </div>
+        <div className="px-7 pb-6">
+          <p className="text-base font-medium leading-8 text-[#5F667A]">{a}</p>
         </div>
       )}
     </div>

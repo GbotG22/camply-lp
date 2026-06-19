@@ -8,63 +8,80 @@ const freeFeatures = [
   "詳細な通知設定",
 ];
 
+const steps = [
+  ["1", "ダウンロード", "App Storeから無料で入手。iPhoneに対応しています。"],
+  ["2", "アカウント登録", "メールアドレスの登録だけ。約30秒で完了。クレジットカードは不要です。"],
+  ["3", "予定とお金を登録", "授業・バイト・支出を登録すれば、毎日ひらきたくなるアプリに。"],
+];
+
 export default function Pricing() {
   return (
-    <section className="py-24 bg-white" id="pricing">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-[#4F8EF7] text-sm font-semibold uppercase tracking-widest">Pricing</span>
-          <h2 className="mt-3 text-4xl font-bold text-gray-900 tracking-tight">
-            すべての機能を無料で使えます
-          </h2>
-          <p className="mt-4 text-gray-500 text-lg">
-            隠れた課金なし。広告なし。大学生のために設計しました。
-          </p>
+    <>
+      <section className="bg-[#0D1733] py-24 text-white">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-14 text-center">
+            <p className="text-xs font-black uppercase tracking-[0.34em] text-[#8590E8]">How It Works</p>
+            <h2 className="mt-6 text-4xl font-black tracking-normal sm:text-5xl">
+              はじめ方は、かんたん3ステップ。
+            </h2>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {steps.map(([num, title, desc]) => (
+              <div key={num} className="rounded-xl border border-white/10 bg-white/[0.06] p-8">
+                <div className="grid h-12 w-12 place-items-center rounded-xl bg-[#5861D9] text-xl font-black">
+                  {num}
+                </div>
+                <h3 className="mt-7 text-xl font-black">{title}</h3>
+                <p className="mt-4 text-base font-medium leading-8 text-[#C2C8DA]">{desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
+      </section>
 
-        <div className="max-w-md mx-auto">
-          <div className="relative bg-gradient-to-br from-[#4F8EF7] to-[#7C3AED] rounded-3xl p-0.5 shadow-2xl">
-            <div className="bg-white rounded-[calc(1.5rem-2px)] p-8">
-              {/* ヘッダー */}
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-gray-500 font-medium">camply</span>
-                <span className="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">完全無料</span>
+      <section className="bg-white py-24" id="pricing">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-14 text-center">
+            <span className="text-xs font-black uppercase tracking-[0.34em] text-[#5861D9]">Pricing</span>
+            <h2 className="mt-6 text-4xl font-black tracking-normal text-[#0F1833] sm:text-5xl">
+              すべての機能を、無料で。
+            </h2>
+            <p className="mt-5 text-lg font-medium text-[#7A8193]">
+              隠れた課金なし。広告なし。大学生のために設計しました。
+            </p>
+          </div>
+
+          <div className="mx-auto max-w-xl overflow-hidden rounded-2xl border-2 border-[#5861D9] bg-white shadow-[0_24px_70px_rgba(88,97,217,0.14)]">
+            <div className="px-8 py-12 text-center">
+              <p className="text-sm font-black text-[#7A8193]">camply 完全無料プラン</p>
+              <div className="mt-8 flex items-end justify-center gap-2">
+                <span className="text-7xl font-black leading-none text-[#0F1833]">¥0</span>
+                <span className="pb-2 text-lg font-black text-[#7A8193]">/ 永久</span>
               </div>
+              <p className="mt-6 text-base font-bold text-[#7A8193]">クレジットカード不要。iOS対応。</p>
+            </div>
 
-              <div className="flex items-end gap-2 mb-1">
-                <span className="text-6xl font-bold text-gray-900">¥0</span>
-              </div>
-              <p className="text-gray-400 text-sm mb-8">永久に無料。クレジットカード不要。</p>
-
-              {/* 機能リスト */}
-              <ul className="space-y-3 mb-8">
+            <div className="border-t border-[#E8ECF5] px-8 py-10">
+              <ul className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
                 {freeFeatures.map((f) => (
-                  <li key={f} className="flex items-center gap-3 text-gray-700">
-                    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center">
-                      <svg className="w-3 h-3 text-[#4F8EF7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </span>
-                    <span className="text-sm">{f}</span>
+                  <li key={f} className="flex items-center gap-3 text-sm font-black text-[#2D3448]">
+                    <span className="text-[#5861D9]">✓</span>
+                    {f}
                   </li>
                 ))}
               </ul>
 
-              {/* CTA */}
               <a
                 href="#"
-                className="block w-full text-center py-4 rounded-2xl bg-gradient-to-r from-[#4F8EF7] to-[#7C3AED] text-white font-bold text-base hover:opacity-90 transition-opacity shadow-lg"
+                className="mt-9 block rounded-xl bg-[#5861D9] px-6 py-4 text-center text-base font-black text-white shadow-[0_14px_32px_rgba(88,97,217,0.24)] transition hover:bg-[#4751C9]"
               >
                 App Store で無料ダウンロード
               </a>
-
-              <p className="text-center text-gray-400 text-xs mt-4">
-                iOS 対応 / アカウント登録のみで開始
-              </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
