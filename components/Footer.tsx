@@ -14,7 +14,7 @@ export default function Footer() {
           href={APP_STORE_URL}
           className="mt-9 inline-flex h-14 items-center justify-center rounded-xl bg-white px-8 text-base font-black text-[#0F1833] shadow-[0_18px_40px_rgba(15,24,51,0.18)] transition hover:bg-[#F4F6FA]"
         >
-          App Storeでダウンロード
+          ● App Storeでダウンロード
         </a>
       </div>
 
@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <p className="flex items-center gap-3 text-xl font-black text-white">
-              <span className="h-6 w-6 rounded-md bg-[#5861D9]" />
+              <span className="grid h-6 w-6 place-items-center rounded-lg bg-[#5861D9] text-xs text-white">c</span>
               camply
             </p>
             <p className="mt-5 max-w-xs text-base font-medium leading-8">

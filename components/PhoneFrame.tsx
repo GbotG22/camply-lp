@@ -6,13 +6,15 @@ export function PhoneFrame({
   src,
   alt,
   large,
+  compact,
 }: {
   src: string;
   alt: string;
   large?: boolean;
+  compact?: boolean;
 }) {
-  const w = large ? 235 : 205;
-  const h = large ? 480 : 418;
+  const w = large ? 235 : compact ? 190 : 220;
+  const h = large ? 480 : compact ? 388 : 448;
 
   return (
     <div className="relative flex-shrink-0">

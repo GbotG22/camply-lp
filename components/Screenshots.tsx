@@ -30,11 +30,14 @@ const screens = [
 
 export default function Screenshots() {
   return (
-    <section className="bg-white py-24" id="screenshots">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="mb-16 text-center">
-          <span className="text-xs font-black uppercase tracking-[0.34em] text-[#5861D9]">App Preview</span>
-          <h2 className="mt-6 text-4xl font-black tracking-normal text-[#0F1833] sm:text-5xl">
+    <section className="bg-[#F8F6F1] py-24" id="screenshots">
+      <div className="mx-auto max-w-5xl px-6">
+        <div className="mb-16">
+          <p className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.34em] text-[#5861D9]">
+            <span className="h-px w-8 bg-[#5861D9]" />
+            App Preview
+          </p>
+          <h2 className="mt-6 text-4xl font-black tracking-normal text-[#11172D] sm:text-5xl">
             実際の画面を、見てみましょう。
           </h2>
           <p className="mt-5 text-lg font-medium text-[#7A8193]">

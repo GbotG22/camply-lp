@@ -27,10 +27,14 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="bg-[#F6F7FC] py-24" id="faq">
+    <section className="bg-[#F0EEE8] py-24" id="faq">
       <div className="mx-auto max-w-3xl px-6">
         <div className="mb-14 text-center">
-          <span className="text-xs font-black uppercase tracking-[0.34em] text-[#5861D9]">FAQ</span>
+          <span className="inline-flex items-center gap-3 text-xs font-black uppercase tracking-[0.34em] text-[#5861D9]">
+            <span className="h-px w-8 bg-[#5861D9]" />
+            FAQ
+            <span className="h-px w-8 bg-[#5861D9]" />
+          </span>
           <h2 className="mt-6 text-4xl font-black tracking-normal text-[#0F1833] sm:text-5xl">
             よくあるご質問
           </h2>

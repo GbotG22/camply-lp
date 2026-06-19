@@ -18,18 +18,21 @@ export default function Pricing() {
   return (
     <>
       <section className="bg-[#0D1733] py-24 text-white">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-14 text-center">
-            <p className="text-xs font-black uppercase tracking-[0.34em] text-[#8590E8]">How It Works</p>
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="mb-14">
+            <p className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.34em] text-[#8590E8]">
+              <span className="h-px w-8 bg-[#8590E8]" />
+              How It Works
+            </p>
             <h2 className="mt-6 text-4xl font-black tracking-normal sm:text-5xl">
               はじめ方は、かんたん3ステップ。
             </h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-0 md:grid-cols-3">
             {steps.map(([num, title, desc]) => (
-              <div key={num} className="rounded-xl border border-white/10 bg-white/[0.06] p-8">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-[#5861D9] text-xl font-black">
+              <div key={num} className="border-white/10 py-4 md:border-l md:px-8 first:md:border-l-0">
+                <div className="text-5xl font-black text-[#8590E8]">
                   {num}
                 </div>
                 <h3 className="mt-7 text-xl font-black">{title}</h3>
@@ -40,10 +43,14 @@ export default function Pricing() {
         </div>
       </section>
 
-      <section className="bg-white py-24" id="pricing">
-        <div className="mx-auto max-w-6xl px-6">
+      <section className="bg-[#F8F6F1] py-24" id="pricing">
+        <div className="mx-auto max-w-5xl px-6">
           <div className="mb-14 text-center">
-            <span className="text-xs font-black uppercase tracking-[0.34em] text-[#5861D9]">Pricing</span>
+            <span className="inline-flex items-center gap-3 text-xs font-black uppercase tracking-[0.34em] text-[#5861D9]">
+              <span className="h-px w-8 bg-[#5861D9]" />
+              Pricing
+              <span className="h-px w-8 bg-[#5861D9]" />
+            </span>
             <h2 className="mt-6 text-4xl font-black tracking-normal text-[#0F1833] sm:text-5xl">
               すべての機能を、無料で。
             </h2>
@@ -52,7 +59,7 @@ export default function Pricing() {
             </p>
           </div>
 
-          <div className="mx-auto max-w-xl overflow-hidden rounded-2xl border-2 border-[#5861D9] bg-white shadow-[0_24px_70px_rgba(88,97,217,0.14)]">
+          <div className="mx-auto max-w-xl overflow-hidden rounded-2xl border border-[#E8E4DA] bg-white shadow-[0_24px_70px_rgba(17,23,45,0.08)]">
             <div className="px-8 py-12 text-center">
               <p className="text-sm font-black text-[#7A8193]">camply 完全無料プラン</p>
               <div className="mt-8 flex items-end justify-center gap-2">
@@ -76,7 +83,7 @@ export default function Pricing() {
                 href="#"
                 className="mt-9 block rounded-xl bg-[#5861D9] px-6 py-4 text-center text-base font-black text-white shadow-[0_14px_32px_rgba(88,97,217,0.24)] transition hover:bg-[#4751C9]"
               >
-                App Store で無料ダウンロード
+                ● App Store で無料ダウンロード
               </a>
             </div>
           </div>
